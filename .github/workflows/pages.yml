@@ -1,8 +1,7 @@
 name: Deploy static game to GitHub Pages
 
+# Repository Settings → Pages에서 Source를 "GitHub Actions"로 한 번 활성화한 뒤 수동 실행합니다.
 on:
-  push:
-    branches: [main]
   workflow_dispatch:
 
 permissions:

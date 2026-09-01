@@ -1,0 +1,20 @@
+{
+  "name": "픽셀 탐정단: 숨은 그림 찾기",
+  "short_name": "픽셀 탐정단",
+  "description": "24개의 픽셀 아트 사건과 오늘의 사건을 즐기는 숨은 그림 찾기 게임",
+  "lang": "ko",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#100f21",
+  "theme_color": "#17152f",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

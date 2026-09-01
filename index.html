@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#17152f" />
+  <title>픽셀 탐정단: 12개 스테이지 숨은 그림 찾기</title>
+  <link rel="stylesheet" href="styles.css" />
+
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <main class="app">
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">🔎</div>
+        <div>
+          <h1>픽셀 탐정단: 숨은 그림 찾기</h1>
+          <p>12개 픽셀 사건을 해결하고 전설의 탐정에 도전하세요.</p>
+        </div>
+      </div>
+      <div class="hud" aria-label="게임 정보">
+        <div class="hud-card"><small>스테이지</small><strong id="stageHud">1 / 12</strong></div>
+        <div class="hud-card"><small>남은 시간</small><strong id="timerHud">75</strong></div>
+        <div class="hud-card"><small>점수</small><strong id="scoreHud">0</strong></div>
+        <div class="hud-card"><small>최고 기록</small><strong id="bestHud">0</strong></div>
+      </div>
+    </header>
+
+    <section class="game-layout">
+      <div class="scene-shell" id="sceneShell">
+        <div id="scene" role="application" aria-label="숨은 그림 찾기 장면"></div>
+        <div class="toast" id="toast" role="status"></div>
+      </div>
+
+      <aside class="side-panel">
+        <div class="stage-head">
+          <small id="stageLabel">STAGE 01</small>
+          <h2 id="stageName">반딧불 마법 숲</h2>
+          <p id="stageDesc">숲속 풍경에 자연스럽게 섞인 물건을 찾아보세요.</p>
+        </div>
+
+        <div>
+          <div class="target-title">
+            <span>찾아야 할 물건</span>
+            <b id="foundCount">0 / 6</b>
+          </div>
+          <ul class="targets" id="targetList"></ul>
+        </div>
+
+        <div class="controls">
+          <button class="pixel-btn" id="hintBtn" type="button">💡 힌트 <span id="hintCount">4</span></button>
+          <button class="pixel-btn secondary" id="soundBtn" type="button" aria-label="소리 끄기">🔊</button>
+        </div>
+
+        <div class="progress" aria-label="스테이지 진행률"><i id="progressBar"></i></div>
+      </aside>
+    </section>
+    <nav class="case-route" id="caseRoute" aria-label="12개 사건 진행도"></nav>
+    <div class="footer-tip">빈 곳을 잘못 누르면 3초가 줄어듭니다 · 빠르게 연속 발견하면 콤보 점수가 올라갑니다</div>
+  </main>
+
+  <div class="overlay" id="startOverlay">
+    <div class="modal">
+      <div class="big-icon">🕵️</div>
+      <h2>숨은 물건을 찾아라!</h2>
+      <p>열두 개의 픽셀 스테이지를 탐험하며 숨어 있는 물건을 모두 찾으세요. 후반부에는 목표 수와 위장 난도가 높아집니다. 확대가 필요하면 모바일에서 두 손가락 확대도 사용할 수 있습니다.</p>
+      <div class="howto">
+        <div><b>👀</b><span>목록의 물건을 장면에서 관찰하기</span></div>
+        <div><b>👆</b><span>발견한 물건을 정확하게 누르기</span></div>
+        <div><b>⚡</b><span>5초 안에 연속 발견해 콤보 쌓기</span></div>
+      </div>
+      <div class="modal-actions">
+        <button class="pixel-btn" id="startBtn" type="button">게임 시작</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="overlay" id="resultOverlay" hidden>
+    <div class="modal">
+      <div class="big-icon" id="resultIcon">🏆</div>
+      <h2 id="resultTitle">스테이지 완료!</h2>
+      <p id="resultMessage">멋진 관찰력이에요.</p>
+      <div class="score-breakdown">
+        <div><small>현재 점수</small><strong id="resultScore">0</strong></div>
+        <div><small>시간 보너스</small><strong id="timeBonus">0</strong></div>
+        <div><small>최대 콤보</small><strong id="maxCombo">x1</strong></div>
+      </div>
+      <div class="modal-actions">
+        <button class="pixel-btn" id="nextBtn" type="button">다음 스테이지</button>
+        <button class="pixel-btn secondary" id="restartBtn" type="button">처음부터</button>
+      </div>
+    </div>
+  </div>
+
+<script src="js/helpers.js"></script>
+<script src="js/stages-1.js"></script>
+<script src="js/stages-2.js"></script>
+<script src="js/stages-3.js"></script>
+<script src="js/stages-4.js"></script>
+<script src="js/game.js"></script>
+</body>
+</html>

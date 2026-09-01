@@ -4,11 +4,12 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="theme-color" content="#17152f" />
-  <meta name="description" content="24개의 픽셀 아트 사건을 해결하는 브라우저 숨은 그림 찾기 게임" />
-  <title>픽셀 탐정단: 24개 스테이지 숨은 그림 찾기</title>
+  <meta name="description" content="30개의 사실적인 사건 현장과 오늘의 사건을 즐기는 브라우저 숨은 그림 찾기 게임" />
+  <title>리얼 탐정단: 30개 사실적 장면 숨은 그림 찾기</title>
   <link rel="manifest" href="manifest.webmanifest" />
   <link rel="icon" href="icon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="realistic.css" />
 </head>
 <body>
   <div class="noise" aria-hidden="true"></div>
@@ -18,16 +19,16 @@
       <div class="brand">
         <div class="brand-mark" aria-hidden="true">🔎</div>
         <div class="brand-copy">
-          <h1>픽셀 탐정단: 숨은 그림 찾기</h1>
-          <p>24개의 픽셀 사건, 별 72개, 매일 바뀌는 오늘의 사건</p>
+          <h1>리얼 탐정단: 숨은 그림 찾기</h1>
+          <p>30개의 사실적 사건 현장, 별 90개, 매일 바뀌는 오늘의 사건</p>
         </div>
       </div>
 
       <div class="hud" aria-label="게임 정보">
-        <div class="hud-card"><small>사건</small><strong id="stageHud">1 / 24</strong></div>
+        <div class="hud-card"><small>사건</small><strong id="stageHud">1 / 30</strong></div>
         <div class="hud-card" id="timerCard"><small>남은 시간</small><strong id="timerHud">75</strong></div>
         <div class="hud-card"><small>점수</small><strong id="scoreHud">0</strong></div>
-        <div class="hud-card"><small>별</small><strong id="starHud">0 / 72</strong></div>
+        <div class="hud-card"><small>별</small><strong id="starHud">0 / 90</strong></div>
         <div class="hud-card"><small>최고 기록</small><strong id="bestHud">0</strong></div>
       </div>
     </header>
@@ -41,7 +42,7 @@
           <div class="combo-chip" id="comboChip" hidden>COMBO x1</div>
         </div>
 
-        <nav class="case-route" id="caseRoute" aria-label="24개 사건 진행도"></nav>
+        <nav class="case-route" id="caseRoute" aria-label="30개 사건 진행도"></nav>
       </div>
 
       <aside class="side-panel">
@@ -94,19 +95,19 @@
   <div class="overlay" id="startOverlay">
     <div class="modal start-modal">
       <div class="big-icon">🕵️</div>
-      <span class="eyebrow">PIXEL DETECTIVE: CHAPTER II</span>
-      <h2>24개의 사건을 해결하라!</h2>
-      <p>기존 12개 사건에 새로운 지역 12곳이 추가되었습니다. 사건을 완료해 별을 모으고, 잠긴 스테이지를 열며 전설의 픽셀 탐정에 도전하세요.</p>
+      <span class="eyebrow">REAL SCENE DETECTIVE</span>
+      <h2>30개의 사건을 해결하라!</h2>
+      <p>실제 사진을 바탕으로 구성된 30개 사건 현장에서 숨은 물건을 찾으세요. 별을 모아 다섯 챕터를 해금하고 검은 달 사건의 진실까지 추적합니다.</p>
 
       <div class="start-stats" id="startStats">
-        <div><small>해금 사건</small><strong id="unlockedStat">1 / 24</strong></div>
-        <div><small>수집한 별</small><strong id="startStarStat">0 / 72</strong></div>
+        <div><small>해금 사건</small><strong id="unlockedStat">1 / 30</strong></div>
+        <div><small>수집한 별</small><strong id="startStarStat">0 / 90</strong></div>
         <div><small>최고 점수</small><strong id="startBestStat">0</strong></div>
       </div>
 
       <div class="feature-grid">
-        <div><b>⭐</b><span>시간·실수·힌트에 따른 3별 평가</span></div>
-        <div><b>🗺️</b><span>4개 챕터와 자유로운 사건 선택</span></div>
+        <div><b>📷</b><span>30개의 서로 다른 고해상도 사실적 장면</span></div>
+        <div><b>🗺️</b><span>5개 챕터와 자유로운 사건 선택</span></div>
         <div><b>📅</b><span>매일 같은 조건으로 도전하는 오늘의 사건</span></div>
       </div>
 
@@ -185,6 +186,7 @@
   <script src="js/stages/11.js"></script>
   <script src="js/stages/12.js"></script>
   <script src="js/stages/expansion.js"></script>
-  <script src="js/game.js"></script>
+  <script src="js/realistic-scenes.js"></script>
+  <script src="js/game-v4-loader.js"></script>
 </body>
 </html>

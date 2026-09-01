@@ -1,0 +1,10 @@
+{
+  "name": "real-scene-detective-hidinggame",
+  "version": "4.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node scripts/validate-v4.mjs",
+    "test:v4": "node scripts/validate-v4.mjs"
+  }
+}

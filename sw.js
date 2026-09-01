@@ -1,14 +1,17 @@
 'use strict';
 
-const CACHE_NAME = 'pixel-detective-v2-20260901';
+const CACHE_NAME = 'real-scene-detective-v4-20260902';
 const APP_SHELL = [
   './',
   './index.html',
   './styles.css',
+  './realistic.css',
   './manifest.webmanifest',
   './icon.svg',
   './js/helpers.js',
+  './js/realistic-scenes.js',
   './js/game.js',
+  './js/game-v4-loader.js',
   './js/stages/01.js',
   './js/stages/02.js',
   './js/stages/03.js',
@@ -39,6 +42,8 @@ self.addEventListener('activate', event => {
 
 self.addEventListener('fetch', event => {
   if (event.request.method !== 'GET') return;
+  const requestUrl = new URL(event.request.url);
+  if (requestUrl.origin !== self.location.origin) return;
 
   event.respondWith(
     caches.match(event.request).then(cached => {
